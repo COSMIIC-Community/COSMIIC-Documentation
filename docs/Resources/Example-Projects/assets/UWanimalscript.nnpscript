@@ -1,0 +1,78 @@
+%Node set: PM is always 7, this use a PG4 at node 3
+%RAM: count, persistent between script runs
+%ROM: pw pa freq stimOnLimit stimOffLimit, global to device
+
+% each count represents one second because script is set to 1000ms
+
+% initialize variables
+global uint8 count = 0 % counter across script run
+stack uint8 totalLimit = 0
+stack uint32 period = 0
+
+% set variables by their corresponding mapped memory in the 1F57 non-volatile memory
+define stimOnLimit = N7:1F57.1|uint8
+define stimOffLimit = N7:1F57.2|uint8
+define StimOnVals = N7:1F57.3^2|uint8 % references 1F57 subindices 3 and 4 
+define freq = N7:1F57.5|uint8
+
+
+%------------- section start ----------------%
+{Init}
+% add up time limits
+ADD stimOnLimit stimOffLimit => totalLimit
+
+%% Runs only on first start up
+% if count does not equal 0, continue to stimState which will determine if stim is on or off depending on count
+BNE count 0 => StimState
+% set sync communicaiton cycle to match intended frequency with od index 1006 in PM
+DIV 1000 freq => period
+MOV period => (uint32)N7:1006.0
+GOTO => End
+
+
+%------------- section end ----------------%
+
+%------------- section start ----------------%
+{StimState}
+% stimState is a code block that determines if stim should be ON or OFF based on count
+BLTE count stimOnLimit => stimActive
+BGT count stimOnLimit => stimNonActive
+%------------- section end ----------------%
+
+%------------- section start ----------------%
+{stimActive}
+% stimActive is a code block that ensures stimulation is on during the allotted time
+NMT0 7 0x95 % hex value 0x95 sent over nmt to power module turns the network ON
+TDEL 400 % provide extra time for PG4 to activate before entering stim mode
+NMT0 0 0x05 % hex value 0x05 sent over nmt to all modules enters testStim / Y_Manual mode
+TDEL 100
+% set stimulation parameters to node of PG4 module
+MOV StimOnVals => (uint8)N3:3212.1
+
+GOTO => End
+%------------- section end ----------------%
+
+%------------- section start ----------------%
+{stimNonActive}
+%stimNonActive is a code block that ensures stimulation is turned off during the allotted time
+BGTE count totalLimit => resetCount
+%MOV [0 0] => (uint8)N3:3212.1
+TDEL 500 % offsets time delays from stimActive mode leading to more equal stim on and off timing
+NMT0 0 0x07 % hex value 0x07 sent over nmt to all modules enters waiting mode
+TDEL 100
+NMT0 7 0x96 % hex value 0x96 sent over nmt to power module turns off network
+GOTO => End
+%------------- section end ----------------%
+
+%------------- section start ----------------%
+{resetCount}
+MOV 0 => count
+GOTO => End
+%------------- section end ----------------%
+
+%------------- section start ----------------%
+{End}
+ADD count 1 => count
+NOP
+%------------- section end ----------------%
+
