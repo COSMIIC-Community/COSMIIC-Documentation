@@ -37,9 +37,9 @@ All files and drawings for the design of the Biopotential Recording Module are a
 
 ### Firmware
 
-:link: **[Implantables-BP2-Application on COSMIIC GitHub](https://github.com/COSMIIC-Community/Implantables-BP2-Application)**
+:link: **[Implantables-BP2-App on COSMIIC GitHub](https://github.com/COSMIIC-Community/Implantables-BP2-App)**
 
-:link: **[Implantables-RemoteModules-Bootloader on COSMIIC GitHub](https://github.com/COSMIIC-Community/Implantables-RemoteModules-Bootloader)** Note: the common Remote Modules Bootloader source code for the PG4/BP2 module version using an AVR microprocessor is being held private until certain proprietary code segments can be replaced. 
+:link: **[Implantables-RemoteModule-Boot on COSMIIC GitHub](https://github.com/COSMIIC-Community/Implantables-RemoteModule-Boot)** Note: the common Remote Modules Bootloader source code for the PG4/BP2 module version using an AVR microprocessor is being held private until certain proprietary code segments can be replaced. 
 
 Guidance on the build and flash process are incoming.
 
