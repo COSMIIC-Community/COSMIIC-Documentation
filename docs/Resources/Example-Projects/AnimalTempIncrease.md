@@ -2,9 +2,9 @@
 sidebar_position: 1
 ---
 
-# Increasing Temperature Limit for Animal Test
+# Increasing Temperature Thresholds for Animal Test
 
-Adjust temperature operating thresholds to account for animal model body heat
+Adjust operating temperature limits to account for body heat of animal models
 
 ---
 
@@ -26,15 +26,15 @@ The goal was to change the operating temperature thresholds to a temperature tha
 
 ### Design Thinking
 
-PM firmware: The max temperature is defined in `app/runcanserver.c` as `#define MAX_CASE_TEMPERATURE`. The succeeding value was changed from 400 to 430. The value is in units of 0.1 degree Celsius. This is the only value that needed to be changed in the PM. In this same file, `checkCaseTemperature()` uses this value in a logic statement to determine if the network should be set to Wait mode and then turn the Network OFF. If the PM's thermistor reads a value over the limit three consecutive times, the network is shut down. We were first able to confirm this feature by toggling a potentiometer on the thermistor input on the benchtop development kit while monitoring values on the pmtest.mlapp in NNP-API. Then we used the NNP-API commands to set `networkOn()`, heat the human version of the PM to 43 degrees Celsius on a hot plate, and use `getNetworkStatus()` to confirm that the network turned OFF (ans=0).
+**PM firmware:** The max temperature is defined in `app/runcanserver.c` as `#define MAX_CASE_TEMPERATURE`. The succeeding value was changed from 400 to 430. The value is in units of 0.1 degree Celsius. This is the only value that needed to be changed in the PM. In this same file, `checkCaseTemperature()` uses this value in a logic statement to determine if the network should be set to Wait mode and then turn the Network OFF. If the PM's thermistor reads a value over the limit three consecutive times, the network is shut down. We were first able to confirm this feature by toggling a potentiometer on the thermistor input on the benchtop development kit while monitoring values on the pmtest.mlapp in NNP-API. Then we used the NNP-API commands to set `networkOn()`, heat the human version of the PM to 43 degrees Celsius on a hot plate, and use `getNetworkStatus()` to confirm that the network turned OFF (ans=0).
 
-Wireless Link (Smart Charger) firmware: The temperature warnings and error values are defined in `wirelesslink/src/charger.c` as `#define PM_GOOD_TEMP`, `#define PM_WARN_TEMP`, and `#define PM_MAX_TEMP`. We increased each value by 30, matching `PM_MAX_TEMP` to the `MAX_CASE_TEMPERATURE` in the PM firmware at the value of 430. After building the Wireless Link project with the `#define WL_IN_CHARGER` in `wirelesslink/src/cmdhandler.h` to orient the firmware for use in the Smart Charger, we confirmed the feature by heating the PM on a hot plate while charging with the Smart Charger. Warning icons changed at the new temperature thresholds and charging stopped at 43 degrees Celsius, reading "Error: PM Temperature Limit."
+**Wireless Link (Smart Charger) firmware:** The temperature warnings and error values are defined in `wirelesslink/src/charger.c` as `#define PM_GOOD_TEMP`, `#define PM_WARN_TEMP`, and `#define PM_MAX_TEMP`. We increased each value by 30, matching `PM_MAX_TEMP` to the `MAX_CASE_TEMPERATURE` in the PM firmware at the value of 430. After building the Wireless Link project with the `#define WL_IN_CHARGER` in `wirelesslink/src/cmdhandler.h` to orient the firmware for use in the Smart Charger, we confirmed the feature by heating the PM on a hot plate while charging with the Smart Charger. Warning icons changed at the new temperature thresholds and charging stopped at 43 degrees Celsius, reading "Error: PM Temperature Limit" on the Smart Charger screen.
 
 ### Forks of Repository
 
-This firmware is a fork of the main PM application. The PM firmware was built using IAR and was flashed wirelessly to the PM using the `pmbootloader.mlapp` in the NNP-API repository.
+:link: [**Implantables-PM-App-Animal**](https://github.com/COSMIIC-Community/Implantables-PM-App-Animal) This firmware is a fork of the main PM application. The PM firmware was built using IAR and was flashed wirelessly to the PM using the `pmbootloader.mlapp` in the NNP-API repository.
 
-This firmware is a fork of the main Wireless Link application. The build is conducted with the WL_IN_CHARGER option and was flashed over serial to the Wireless Link using the directions here: [Wireless-Link#serial-recovery-and-device-firmware-update-mode-usb-dfu-mode](/Externals/Wireless-Link#serial-recovery-and-device-firmware-update-mode-usb-dfu-mode)
+:link: [**Externals-WL-App-Animal**](https://github.com/COSMIIC-Community/Externals-WL-App-Animal) This firmware is a fork of the main Wireless Link application. The build is conducted with the `#define WL_IN_CHARGER true` option and was flashed over serial to the Wireless Link using the directions [here.](/Externals/Wireless-Link#serial-recovery-and-device-firmware-update-mode-usb-dfu-mode)
 
 ---
 
