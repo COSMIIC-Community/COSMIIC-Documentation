@@ -118,11 +118,6 @@ const config = {
             label: 'Contact',
             position: 'right',
           },
-          {
-            href: 'https://cosmiic.org/join-now/',
-            label: 'Join Newsletter',
-            position: 'right',
-          },
         ],
       },
       footer: 
