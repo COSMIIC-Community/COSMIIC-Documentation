@@ -51,7 +51,8 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: '/', // Serve the docs at the site's root example.com/docs/intro becomes example.com with other docs at example.com/other-doc
-          // Please change this to your repo.
+          editUrl: 'https://github.com/COSMIIC-Community/COSMIIC-Documentation/blob/main/',
+
         },
         blog: false, // optional: disable the blog plugin
         theme: {
