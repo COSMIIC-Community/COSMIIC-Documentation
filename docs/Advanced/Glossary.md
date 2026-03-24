@@ -8,7 +8,7 @@ Definitions of common terms used on the site
 
 ---
 
-- **Access Point --** Generic term for the wireless interface device that bridges a desktop computer and the implanted NNP System. The Wireless Link functions as an Access Point, connecting via USB.
+- **Access Point --** Generic term for the wireless interface device that bridges a desktop computer and the implanted COSMIIC System. The Wireless Link functions as an Access Point, connecting via USB.
 
 - **Accelerometer --** A sensor measuring acceleration in three axes. An accelerometer is integrated into the Power Module.
 
@@ -32,7 +32,7 @@ Definitions of common terms used on the site
 
 - **BUSA / BUSB --** The two-conductor network bus lines on a development board frame. BUSA uses the top two pins and BUSB uses the bottom two pins; each requires a separate jumper connection.
 
-- **CAN (Controller Area Network) --** An industry-standard network protocol used in the COSMIIC NNP System for low-latency, deterministic communication with robust error checking.
+- **CAN (Controller Area Network) --** An industry-standard network protocol used in the COSMIIC System for low-latency, deterministic communication with robust error checking.
 
 - **CAN-ID --** The message identifier in the CAN protocol. For CANopen, the format combines a function code with the node ID (e.g., 600h + Node ID for an SDO client request).
 
@@ -52,7 +52,7 @@ Definitions of common terms used on the site
 
 - **Connector --** The physical interface between electrodes and modules. Electrode connectors are dual-contact and color-coded: red for intramuscular electrodes and green for epimysial electrodes.
 
-- **Control Editor --** A legacy Windows software application for NNP System configuration and operation. It has been superseded by the NNP-API.
+- **Control Editor --** A legacy Windows software application for COSMIIC System configuration and operation. It has been superseded by the NNP-API.
 
 - **Control Tower (CT) --** A formerly used external device that served as a gateway between a computer and the implanted system. Now obsolete. By convention, it was assigned node number 8.
 
@@ -78,9 +78,9 @@ Definitions of common terms used on the site
 
 - **Epimysial Electrode --** An electrode designed for placement on the surface of a muscle (the epimysium). Uses a platinum-iridium disk contact sewn onto the epimysium. Associated with green connectors.
 
-- **Failsafe Mechanism --** A three-level safety system in the NNP System consisting of hardware charge limits, software parameter limits, and magnetic switches to prevent unsafe stimulation.
+- **Failsafe Mechanism --** A three-level safety system in the COSMIIC System consisting of hardware charge limits, software parameter limits, and magnetic switches to prevent unsafe stimulation.
 
-- **Firmware --** The embedded software that runs on each NNP System module, controlling its behavior and communication.
+- **Firmware --** The embedded software that runs on each COSMIIC System module, controlling its behavior and communication.
 
 - **Flash Memory --** Non-volatile memory used to store firmware and configuration data on each module.
 
@@ -90,7 +90,7 @@ Definitions of common terms used on the site
 
 - **Heartbeat Message --** A periodic message (sent approximately every 2.3 seconds) from each remote module to the Power Module, indicating that the remote module's communication is functioning.
 
-- **IDE (Investigational Device Exemption) --** The FDA regulatory pathway under which the NNP System is studied as an investigational medical device.
+- **IDE (Investigational Device Exemption) --** The FDA regulatory pathway under which the COSMIIC System is studied as an investigational medical device.
 
 - **Index --** A 16-bit address used to locate an entry in the Object Dictionary (e.g., 0x1006 is the SYNC period index).
 
@@ -124,7 +124,7 @@ Definitions of common terms used on the site
 
 - **Monopolar Stimulation --** A stimulation configuration in which a single electrode serves as the active contact and the device case serves as the return electrode.
 
-- **Network Cable --** A four-conductor cable that connects NNP modules to each other, carrying both power and CAN communication signals.
+- **Network Cable --** A four-conductor cable that connects COSMIIC modules to each other, carrying both power and CAN communication signals.
 
 - **Network Management (NMT) --** A CANopen protocol for sending commands to modules, changing their operational states, and managing overall network behavior.
 
@@ -134,11 +134,9 @@ Definitions of common terms used on the site
 
 - **Neuroprosthetics --** Implanted or external devices that restore lost sensory or motor function through electrical stimulation and signal processing.
 
-- **NMT --** See *Network Management (NMT)*.
+- **NNP (Networked Neuroprosthetic) System --** An implantable neuromodulation system originally invented at Case Western Reserve University, consisting of a Power Module and multiple interconnected remote modules for stimulation and recording, now open source as the COSMIIC System
 
-- **NNP (Networked Neuroprosthetic) System --** An implantable neuromodulation system originally invented at Case Western Reserve University, consisting of a Power Module and multiple interconnected remote modules for stimulation and recording.
-
-- **NNP-API --** A MATLAB-based API providing high-level and low-level commands for controlling the NNP System. Consists of the NNPCORE and NNPHELPERS classes.
+- **NNP-API --** A MATLAB-based API providing high-level and low-level commands for controlling the COSMIIC System. Consists of the NNPCORE and NNPHELPERS classes.
 
 - **NNPCORE --** The low-level communication layer of the NNP-API that manages the serial port connection, Access Point radio, and SDO/NMT protocols directly.
 
@@ -176,7 +174,7 @@ Definitions of common terms used on the site
 
 - **Relative State-of-Charge (RSOC) --** The Nominal Available Capacity expressed as a percentage of the last measured full discharge capacity.
 
-- **Remote Module (RM) --** Any module connected to the NNP network other than the Power Module. Typically assigned node numbers 1–6 (PG4s) and 9–14 (BP2s).
+- **Remote Module (RM) --** Any module connected to the COSMIIC System network other than the Power Module. Typically assigned node numbers 1–6 (PG4s) and 9–14 (BP2s).
 
 - **RPDO (Receive PDO) --** A Process Data Object configured to receive and store data from the network.
 
@@ -184,7 +182,7 @@ Definitions of common terms used on the site
 
 - **RTOS (Real-Time Operating System) --** The operating system managing the multiple concurrent processing tasks running on the Power Module.
 
-- **Script / NNPScript --** An assembly-like scripting language that runs directly on the Power Module, enabling autonomous system operation without a continuous external computer connection.
+- **.nnpscript --** An assembly-like scripting language and file format that runs directly on the Power Module, enabling autonomous system operation without a continuous external computer connection.
 
 - **Script Pointer (SP) --** The destination slot number used when loading a compiled script onto the Power Module. Slots are numbered 1–25.
 
@@ -220,7 +218,7 @@ Definitions of common terms used on the site
 
 - **Touch-Proof Connector --** A recessed electrode connection design that prevents accidental contact with the conductive contacts.
 
-- **TPDO (Transmit PDO) --** A Process Data Object configured to stream data out from a device to the network.
+- **tPDO (Transmit PDO) --** A Process Data Object configured to stream data out from a device to the network.
 
 - **UART --** A serial communication hardware protocol used for various internal interfaces within NNP System modules.
 
@@ -234,6 +232,6 @@ Definitions of common terms used on the site
 
 - **Watchdog Timer --** A safety mechanism requiring periodic resets from the Control Editor during manual stimulation modes. If the reset is not received within 10 seconds, stimulation is halted.
 
-- **Wireless Link (WL) --** The external radio interface device (Access Point) that connects a desktop computer to the implanted NNP System via USB, enabling wireless communication with the Power Module.
+- **Wireless Link (WL) --** The external radio interface device (Access Point) that connects a desktop computer to the implanted COSMIIC System via USB, enabling wireless communication with the Power Module.
 
 - **WOR (Wake-on-Radio) --** A low-power mode in which the Power Module periodically awakens to check for incoming radio messages, reducing power consumption at the cost of increased communication latency.
