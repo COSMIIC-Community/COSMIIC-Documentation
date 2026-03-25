@@ -10,6 +10,8 @@ nnp=NNPHELPERS;
 %N7:1F57.4|uint8 => StimOnVals[2] % (pulse amplitude)
 %N7:1F57.5|uint8 => freq
 
+% The PG4 node is programmed as node 3 in the .nnpscript. Make sure this matches your system orientation. Change the node number in rmbootloader(nnp) if necessary.
+
 %% Write Memory to Change Variables
 % Run this section to set values for stimulation parameters in the non-volatile memory in the power module
 % these commands set and allow the script to proxy those typical commands in a repititive, automated way instead of using a matlab request everytime. 
