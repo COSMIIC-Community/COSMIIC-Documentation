@@ -59,11 +59,11 @@ const config = {
           customCss: require.resolve('./src/css/custom.css'),
         },
         gtag: {
-          trackingID: 'G-M6W11VVRPY',
+          trackingID: 'G-LXFTE1J7LY',
           anonymizeIP: true,
         },
         googleTagManager: {
-          containerId: 'GTM-N93QS9GJ',
+          containerId: 'GTM-TDS2SC8F',
         },
         sitemap: {
           changefreq: 'weekly',
