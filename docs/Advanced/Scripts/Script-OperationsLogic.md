@@ -89,8 +89,8 @@ MOV $syncPeriod => N7:1006.0|UNS32
 | `BEQ` | 62 | 2 | Branch if Op0 == Op1 |
 | `BGT` | 61 | 2 | Branch if Op0 > Op1 |
 | `BGTE` | 64 | 2 | Branch if Op0 >= Op1 |
-| `BLT` | 60 | 2 | Branch if Op0 < Op1 |
-| `BLTE` | 65 | 2 | Branch if Op0 <= Op1 |
+| `BLT` | 60 | 2 | Branch if Op0 &lt; Op1 |
+| `BLTE` | 65 | 2 | Branch if Op0 &lt;= Op1 |
 | `BNE` | 63 | 2 | Branch if Op0 != Op1 |
 | `BNZ` | 66 | 1 | Branch if Op0 != 0 |
 | `BZ` | 67 | 1 | Branch if Op0 == 0 |
@@ -187,7 +187,7 @@ All trig functions work in degrees.
 | `OR` | 38 | 2 | Bitwise OR |
 | `XOR` | 40 | 2 | Bitwise exclusive OR → result |
 | `COMP` | 41 | 1 | Bitwise complement Op0 → result |
-| `SLFT` | 20 | 2 | Op0 << Op1 (logical shift left) |
+| `SLFT` | 20 | 2 | Op0 &lt;&lt; Op1 (logical shift left) |
 | `SRGT` | 19 | 2 | Op0 >> Op1 (logical shift right) |
 | `SIL` | 35 | 2 | Arithmetic shift left |
 | `SIR` | 36 | 2 | Arithmetic shift right |
