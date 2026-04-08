@@ -8,11 +8,9 @@ Definitions of common terms used on the site
 
 ---
 
-- **Access Point --** Generic term for the wireless interface device that bridges a desktop computer and the implanted COSMIIC System. The Wireless Link functions as an Access Point, connecting via USB.
+- **Access Point --** Generic term for the wireless interface device that bridges a desktop computer and the implanted COSMIIC System. The Wireless Link functions as an Access Point, connecting to the computer via USB.
 
-- **Accelerometer --** A sensor measuring acceleration in three axes. An accelerometer is integrated into the Power Module.
-
-- **Application Firmware --** The primary software application running on each module, distinct from the bootloader firmware.
+- **Accelerometer --** A sensor measuring acceleration in three axes. An accelerometer is integrated into each module.
 
 - **Bandpass Filter --** A signal processing filter that extracts a specific frequency band from a recorded signal. Used in the BP2 module for EMG signal processing.
 
@@ -20,7 +18,7 @@ Definitions of common terms used on the site
 
 - **Between Channel Timing --** The configurable delay (default 1 ms) between stimulation pulses delivered on different channels within the same SYNC period.
 
-- **Biocompatibility --** The assessment of a material's safety and compatibility with biological tissue. Required for all implanted components.
+- **Biocompatibility --** The assessment of a material's safety and compatibility with biological tissue. Required for all implanted and patient-contacting components.
 
 - **Biphasic Waveform --** A two-phase stimulation pulse consisting of a positive phase followed by a negative phase, designed to ensure charge balance and safe tissue stimulation.
 
@@ -28,7 +26,7 @@ Definitions of common terms used on the site
 
 - **Bootloader --** A special state of the microprocessor that enables a download of a new application program. The state is protected by safety interlocks. A bootloader program runs in a protected section of the microprocessor memory so that it cannot be modified or erased.
 
-- **BP2 (Biopotential Recording Module) --** A remote implanted module for recording myoelectric signals from 2 channels. The BP2 processes EMG signals used for neuroprosthetic control. By convention, BP2 modules are assigned node numbers 9–14.
+- **BP2 (Biopotential Recording Module) --** A remote implanted module for recording myoelectric signals from 2 channels. The BP2 processes EMG signals used for neuroprosthetic control.
 
 - **BUSA / BUSB --** The two-conductor network bus lines on a development board frame. BUSA uses the top two pins and BUSB uses the bottom two pins; each requires a separate jumper connection.
 
@@ -38,47 +36,27 @@ Definitions of common terms used on the site
 
 - **CANopen --** A set of specifications and protocols built on top of CAN that enables modular devices to communicate using a producer-consumer messaging model and a standardized Object Dictionary.
 
-- **CC1101 --** The 433 MHz radio transceiver IC used for MedRadio communication in the Wireless Link.
-
-- **Channel Period --** See *SYNC Period*.
-
 - **Charge Balance --** The condition in which the positive and negative charge delivered by a biphasic stimulation pulse are equal and opposite, ensuring zero net charge delivery to tissue.
 
 - **COB-ID --** The communication object identifier used to address PDO and SDO messages in CANopen.
-
-- **Compensated Available Capacity (CACD) --** The available battery capacity adjusted for the current discharge rate, as reported by the battery fuel gauge.
-
-- **Compensated State-of-Charge (CSOC) --** The available battery capacity expressed as a percentage of the Nominal Available Capacity (NAC).
-
-- **Connector --** The physical interface between electrodes and modules. Electrode connectors are dual-contact and color-coded: red for intramuscular electrodes and green for epimysial electrodes.
 
 - **Control Editor --** A legacy Windows software application for COSMIIC System configuration and operation. It has been superseded by the NNP-API.
 
 - **Control Tower (CT) --** A formerly used external device that served as a gateway between a computer and the implanted system. Now obsolete. By convention, it was assigned node number 8.
 
-- **COSMIIC --** An open-source ecosystem and NIH SPARC-funded project providing access to the Networked Neuroprosthetic (NNP) System for neuromodulation research and development.
-
-- **Cycle Count (CYCT) --** The total number of discharge-charge cycles the battery has completed since its last reset, as reported by the battery fuel gauge.
+- **COSMIIC --** An open-source ecosystem created through a NIH SPARC-funded project providing access to the Networked Neuroprosthetic (NNP) System for neuromodulation research and development.
 
 - **Development Board / Dev Board --** A benchtop version of the implantable modules, used with a frame board for testing and development without surgical implantation.
 
 - **Device Firmware Update (DFU) Mode --** A boot mode on the Wireless Link that allows firmware uploads without a JTAG hardware interface.
 
-- **Differential Recording --** A recording technique using two electrode contacts separated by approximately 1 cm. Improves signal quality by rejecting common-mode noise.
-
-- **Distributed Setup --** A module configuration in which modules are physically separated from each other and connected via twisted-pair cables, as opposed to a stacked configuration.
-
 - **EEPROM --** Non-volatile memory used for persistent storage of module parameters and configuration that must survive a power cycle.
-
-- **Electrode Port --** A connection point on a remote module for attaching electrode cables.
 
 - **EMG (Electromyography) --** The recording and analysis of myoelectric signals generated by muscle contractions.
 
-- **End-of-Discharge (EDV) --** The voltage threshold at which the battery is considered empty, corresponding to approximately 6.25% state-of-charge.
-
 - **Epimysial Electrode --** An electrode designed for placement on the surface of a muscle (the epimysium). Uses a platinum-iridium disk contact sewn onto the epimysium. Associated with green connectors.
 
-- **Failsafe Mechanism --** A three-level safety system in the COSMIIC System consisting of hardware charge limits, software parameter limits, and magnetic switches to prevent unsafe stimulation.
+- **Failsafe Mechanism --** A three-level safety system in the COSMIIC System consisting of hardware charge limits, software parameter limits, and magnetic switches to prevent unsafe operation.
 
 - **Firmware --** The embedded software that runs on each COSMIIC System module, controlling its behavior and communication.
 
@@ -86,9 +64,7 @@ Definitions of common terms used on the site
 
 - **Frame Board --** A support structure for development (benchtop) modules that provides power input, network connections, and output monitoring points.
 
-- **Function Group --** A logical grouping of device functions on a module that can be enabled or disabled as a unit.
-
-- **Heartbeat Message --** A periodic message (sent approximately every 2.3 seconds) from each remote module to the Power Module, indicating that the remote module's communication is functioning.
+- **Heartbeat Message --** A periodic message from each remote module to the Power Module, indicating that the remote module's communication is functioning.
 
 - **IDE (Investigational Device Exemption) --** The FDA regulatory pathway under which the COSMIIC System is studied as an investigational medical device.
 
@@ -102,7 +78,7 @@ Definitions of common terms used on the site
 
 - **JTAG --** A hardware interface standard used for debugging and flashing firmware onto microcontrollers.
 
-- **JST Connector --** A standardized miniature connector type used for battery connections to the Power Module.
+- **JST Connector --** A standardized miniature connector type used for battery connections to the Power Module frame board.
 
 - **Li-ion Battery / Lithium-ion Battery --** The rechargeable battery type used in the Power Module, consisting of three cells connected in parallel.
 
@@ -134,7 +110,7 @@ Definitions of common terms used on the site
 
 - **Neuroprosthetics --** Implanted or external devices that restore lost sensory or motor function through electrical stimulation and signal processing.
 
-- **NNP (Networked Neuroprosthetic) System --** An implantable neuromodulation system originally invented at Case Western Reserve University, consisting of a Power Module and multiple interconnected remote modules for stimulation and recording, now open source as the COSMIIC System
+- **NNP (Networked Neuroprosthetic) System --** An implantable neuromodulation system originally invented at Case Western Reserve University, now open source as the COSMIIC System
 
 - **NNP-API --** A MATLAB-based API providing high-level and low-level commands for controlling the COSMIIC System. Consists of the NNPCORE and NNPHELPERS classes.
 
@@ -144,15 +120,9 @@ Definitions of common terms used on the site
 
 - **Node / Node Number --** The value assigned to a module when it is first configured that allows it to be uniquely referenced from the Control Editor software and embedded scripts. All permanent devices have a node number. Node numbers typically exist between 1 and 20 inclusively. By convention, the Power Module is assigned node number 7 and the Control Tower is assigned node number 8.
 
-- **Nominal Available Capacity (NAC) --** The full charge capacity the battery can deliver under normal conditions, as reported by the battery fuel gauge.
-
 - **OD (Object Dictionary) --** A standardized map of all accessible data and parameters across all network modules, addressed by a 16-bit index and an 8-bit sub-index.
 
 - **OD Restore --** A file containing Object Dictionary settings that can be applied to a module to restore its configuration to default values on bootup.
-
-- **Patient Manual Mode --** An operational mode implementing a full closed-loop control cycle: the BP2 or PM provides the control setpoint and the PG4 delivers the corresponding stimulation.
-
-- **Patient Mode / Mode_Patient_Control --** The normal operational mode in which control is handled locally by the on-module application without requiring a continuous external connection.
 
 - **PDO (Process Data Object) --** A CANopen broadcast mechanism for continuous or event-driven data transfer. Configured as either a Transmit PDO (TPDO) or Receive PDO (RPDO).
 
@@ -167,12 +137,6 @@ Definitions of common terms used on the site
 - **Pulse Amplitude (PA) --** The amplitude of the stimulation current delivered to an electrode, ranging from 0 to 20 mA. Stored internally as PA × 10.
 
 - **Pulse Width (PW) --** The duration of a stimulation pulse in microseconds, ranging from 1 to 255 µs.
-
-- **RAM --** Volatile working memory on a module, used for temporary data storage during operation.
-
-- **Record Mode / Mode_Record_X --** An operational mode in which the BP2 generates application PDO data that can be received and stored by the Power Module.
-
-- **Relative State-of-Charge (RSOC) --** The Nominal Available Capacity expressed as a percentage of the last measured full discharge capacity.
 
 - **Remote Module (RM) --** Any module connected to the COSMIIC System network other than the Power Module. Typically assigned node numbers 1–6 (PG4s) and 9–14 (BP2s).
 
@@ -192,11 +156,7 @@ Definitions of common terms used on the site
 
 - **Smart Charger --** An external device that combines the Wireless Link and a charging coil into a single unit for simultaneously communicating with and charging the Power Module.
 
-- **Stacked Configuration --** A physical arrangement in which multiple development modules are stacked vertically with the Power Module at the bottom, connected via jumpers.
-
 - **Stack Usage --** A diagnostic metric reporting the memory utilization percentage for each of the 9 system tasks running on the Power Module.
-
-- **Stopped Mode --** An explicit operational state that immediately turns off all stimulation output.
 
 - **Strain Relief --** A protective feature at cable ends that provides mechanical stiffness and durability at the point of insertion into a module port.
 
@@ -205,16 +165,6 @@ Definitions of common terms used on the site
 - **SYNC (Synchronization Message) --** A cyclically transmitted CAN message that provides a reference timebase for all network operations. The SYNC message drives the scheduler that triggers stimulation pulses.
 
 - **SYNC Period --** The time between successive SYNC messages, which determines the stimulation frequency. A minimum of 23 ms per channel is recommended.
-
-- **Temperature Sensor --** A thermistor-based sensor integrated into the Power Module for monitoring internal temperature.
-
-- **Test Features Mode / Mode_Produce_X_Manual --** An operational mode for testing EMG recording via the BP2 without engaging stimulation output.
-
-- **Test Patterns Mode / Mode_X_Manual --** An operational mode in which the stimulation algorithm runs based on a remote input value (X); the system solves for output channel values (Y) using pre-loaded stimulation patterns.
-
-- **Test Stim Mode / Mode_Y_Manual --** An operational mode in which stimulation parameters (pulse width and/or amplitude) are directly controlled via SDO from an external device.
-
-- **Titanium Case --** The biocompatible hermetic housing material used for the Power Module.
 
 - **Touch-Proof Connector --** A recessed electrode connection design that prevents accidental contact with the conductive contacts.
 
@@ -229,8 +179,6 @@ Definitions of common terms used on the site
 - **Waiting Mode --** An idle operational state in which a module responds to NMT and SDO messages but does not generate PDO messages or deliver stimulation.
 
 - **Wake Interval --** The period at which the Power Module checks for incoming radio messages during Wake-on-Radio (WOR) mode, configurable from 14 to 255 ms (default 20 ms).
-
-- **Watchdog Timer --** A safety mechanism requiring periodic resets from the Control Editor during manual stimulation modes. If the reset is not received within 10 seconds, stimulation is halted.
 
 - **Wireless Link (WL) --** The external radio interface device (Access Point) that connects a desktop computer to the implanted COSMIIC System via USB, enabling wireless communication with the Power Module.
 
