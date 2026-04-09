@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# MATLAB Apps
+# NNP-API Apps
 
 MATLAB App Designer GUIs for testing, configuring, and programming the COSMIIC System
 

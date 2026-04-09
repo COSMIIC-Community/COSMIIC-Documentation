@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# MATLAB API
+# NNP-API
 
 What is included in the NNP-API interface on MATLAB
 
