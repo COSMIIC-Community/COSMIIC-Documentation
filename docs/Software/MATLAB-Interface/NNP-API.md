@@ -2,6 +2,8 @@
 sidebar_position: 1
 ---
 
+import Mermaid from '@theme/Mermaid';
+
 # NNP-API
 
 What is included in the NNP-API interface on MATLAB
@@ -15,7 +17,42 @@ The NNP-API is the MATLAB-based interface for communicating with the COSMIIC Sys
 The interface is implemented as two layered MATLAB classes:
 
 - **`NNPCORE`**: Low-level communication layer. Manages the serial port, Access Point radio settings, and core SDO/NMT radio protocols.
-- **`NNPHELPERS`**: High-level layer with additional helpful functions. Provides convenient commands for common operations like changing system state, reading sensor data, and managing the network. Extends `NNPCORE`
+- **`NNPHELPERS`**: High-level layer with additional helpful functions. Provides convenient commands for common operations like changing system state, reading sensor data, and managing the network. Extends `NNPCORE`.
+
+```mermaid
+---
+title: NNP-API Architecture
+---
+flowchart LR
+    NNP["MATLAB \n Session "]
+    AP["setRadioSettings() - NNPCORE \n Access Point Config"]
+
+    SC["NNPHELPERS methods \n networkOn() · enterWaiting() \n getBPGains() · setVNET()"]
+
+    RD["read() - NNPCORE \n SDO and SDO block"]
+    WR["write() - NNPCORE \n SDO and SDO block"]
+    NMT["nmt() - NNPCORE \n NMT commands"]
+    MEM["Memory access - NNPCORE \n External RAM, \n Flash (log files)"]
+
+    TX["transmit() \n protocol, counter, \n netID, node, [data]*"]
+    WL["Wireless Link"]
+    PM["Power Module"]
+
+    NNP <--> AP
+    NNP --> SC
+    SC --> RD
+    SC --> WR
+    SC --> NMT
+    SC --> MEM
+
+    RD --> TX
+    WR --> TX
+    NMT --> TX
+    MEM --> TX
+    TX --[Serial]--> WL
+    WL --[wireless radio]--> PM
+```
+
 
 To begin using, clone :link: [**NNP-API on COSMIIC GitHub**](https://github.com/COSMIIC-Community/NNP-API) and open as the project folder in MATLAB.
 
