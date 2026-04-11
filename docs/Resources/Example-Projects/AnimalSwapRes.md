@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Reduce Stimulation Amplitude
 
-Swap a resistor on the dev board to lower stimulation amplitude 
+Swap a resistor on the dev board to lower stimulation amplitude.
 
 ---
 
