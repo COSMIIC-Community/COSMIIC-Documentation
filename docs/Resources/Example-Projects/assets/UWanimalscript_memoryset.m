@@ -42,16 +42,39 @@ nnp.read(7, '1F57', 4, 'uint8')
 % read frequency value
 nnp.read(7, '1F57', 5, 'uint8')
 
+%% Set script to not quit on network error
+% Check current script systemcontrol bits
+systemControl = nnp.read(7,'2001',1, 'uint32');
+
+% set continueOnNetworkError bit ON
+systemControl = bitset(systemControl, 8, 1);
+nnp.write(7, '2001', 1, systemControl, 'uint32');
+
+% confirm new system control bits
+systemControl = nnp.read(7,'2001',1, 'uint32');
+
+if length(systemControl)==1
+   scriptsEnabled = bitget(systemControl,5);
+   runStartupScript = bitget(systemControl,9);
+   alarmsEnabled = bitget(systemControl,3);
+   continueOnNetworkError = bitget(systemControl,8);
+   pdoEnabled1 = bitget(systemControl,4);
+   pdoEnabled2 = bitget(systemControl,7);
+   fprintf('\n\nSystemControl 0x%08X\n  Scripts Enabled: %1.0f\n  Run Startup Script: %1.0f\n  Alarms Enabled: %1.0f\n  Continue on Net Err: %1.0f\n',...
+   systemControl,scriptsEnabled,runStartupScript,alarmsEnabled,continueOnNetworkError);
+end
+
+%% Start Script
+nnp.nmt(7,'8D', 1) % Start Script
+%% Stop Script
+nnp.nmt(7,'AE', 1) % Stop Script
+nnp.nmt(7,'A7'); % Reset global script variables, not ODrestore variables
+nnp.enterWaiting
+nnp.networkOff
+
 %% Debug script
 % edit UWanimalscript.nnpscript in Notepad++ and use scriptedit(nnp) to assemble, download, and debug
 scriptedit(nnp);
 % script scheduler should be set to 1000ms to sync each count with 1 second.
 % make sure Script File Paths under the Script Library tab is set correctly to point to your local .nnpscript file
 
-%% Start Script
-nnp.nmt(7,'8D', 1); % Start Script
-%% Stop Script
-nnp.nmt(7,'AE', 1); % Stop Script
-nnp.nmt(7,'A7'); % Reset global variables
-nnp.enterWaiting;
-nnp.networkOff;
