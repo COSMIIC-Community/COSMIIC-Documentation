@@ -12,7 +12,6 @@ const BORDER = "var(--ifm-color-emphasis-200, #e5e7eb)";
 const TEXT_MUTED = "var(--ifm-color-emphasis-600, #6b7280)";
 const TEXT_HEADING = "var(--ifm-heading-color, #111827)";
 const CARD_BG = "var(--ifm-card-background-color, #ffffff)";
-const SURFACE = "var(--ifm-background-surface-color, #f9fafb)";
 
 const styles = {
   wrapper: {
@@ -21,37 +20,6 @@ const styles = {
     margin: "0 auto",
     padding: "0 0 3rem",
   },
-  filterBar: {
-    display: "flex",
-    flexWrap: "wrap",
-    gap: "0.5rem",
-    marginBottom: "2.5rem",
-    padding: "1rem 1.25rem",
-    background: SURFACE,
-    borderRadius: 12,
-    border: `1px solid ${BORDER}`,
-  },
-  filterLabel: {
-    fontSize: "0.75rem",
-    fontWeight: 700,
-    textTransform: "uppercase",
-    letterSpacing: "0.08em",
-    color: TEXT_MUTED,
-    alignSelf: "center",
-    marginRight: "0.25rem",
-  },
-  filterBtn: (active) => ({
-    padding: "0.35rem 0.9rem",
-    borderRadius: 20,
-    border: active ? `2px solid ${TEAL}` : `2px solid ${BORDER}`,
-    background: active ? TEAL_BG : "transparent",
-    color: active ? TEAL : TEXT_MUTED,
-    fontWeight: active ? 700 : 500,
-    fontSize: "0.8rem",
-    cursor: "pointer",
-    transition: "all 0.15s ease",
-    lineHeight: 1.4,
-  }),
   timeline: {
     position: "relative",
     paddingLeft: "2.5rem",
@@ -100,15 +68,6 @@ const styles = {
     fontSize: "1.15rem",
     letterSpacing: "-0.01em",
     color: TEXT_HEADING,
-  },
-  yearBadge: {
-    marginLeft: "0.5rem",
-    fontSize: "0.7rem",
-    fontWeight: 700,
-    background: TEAL_BG,
-    color: TEAL,
-    padding: "0.15rem 0.5rem",
-    borderRadius: 10,
   },
   card: {
     background: CARD_BG,
@@ -183,11 +142,6 @@ const styles = {
     borderRadius: 4,
     transition: "background 0.15s ease",
     lineHeight: 1.4,
-  },
-  emptyState: {
-    textAlign: "center",
-    padding: "3rem 0",
-    color: TEXT_MUTED,
   },
 };
 
@@ -269,120 +223,41 @@ function PublicationCard({ pub }) {
 
 // ─── Main component ──────────────────────────────────────────────────────────
 
-/**
- * PublicationsTimeline
- *
- * Props:
- *   publications  — array of publication objects (see /src/data/publications.js)
- *   showFilters   — boolean, show the year-range filter bar (default: true)
- */
-export default function PublicationsTimeline({
-  publications = [],
-  showFilters = true,
-}) {
-  // Derive year list
-  const years = useMemo(() => {
-    const ys = [...new Set(publications.map((p) => p.year).filter(Boolean))];
-    return ys.sort((a, b) => b - a); // newest first
-  }, [publications]);
-
-  const decades = useMemo(() => {
-    const ds = [...new Set(years.map((y) => Math.floor(y / 10) * 10))];
-    return ds.sort((a, b) => b - a);
-  }, [years]);
-
-  const [activeFilter, setActiveFilter] = useState("all");
-
-  // Group publications by year, newest first
+export default function PublicationsTimeline({ publications = [] }) {
   const grouped = useMemo(() => {
     const sorted = [...publications].sort((a, b) => {
       if (a.year !== b.year) return b.year - a.year;
       return (b.month || 0) - (a.month || 0);
     });
 
-    const filtered = sorted.filter((p) => {
-      if (activeFilter === "all") return true;
-      if (typeof activeFilter === "number")
-        return p.year && Math.floor(p.year / 10) * 10 === activeFilter;
-      return true;
-    });
-
     const groups = {};
-    filtered.forEach((p) => {
+    sorted.forEach((p) => {
       const key = String(p.year);
       if (!groups[key]) groups[key] = { label: key, year: p.year, pubs: [] };
       groups[key].pubs.push(p);
     });
 
     return Object.values(groups).sort((a, b) => b.year - a.year);
-  }, [publications, activeFilter]);
-
-  const totalVisible = grouped.reduce((sum, g) => sum + g.pubs.length, 0);
+  }, [publications]);
 
   return (
     <div style={styles.wrapper}>
-      {/* Filter bar — commented out, set showFilters={true} on the component to re-enable */}
-      {/* {showFilters && (
-        <div style={styles.filterBar}>
-          <span style={styles.filterLabel}>Filter:</span>
-          <button
-            style={styles.filterBtn(activeFilter === "all")}
-            onClick={() => setActiveFilter("all")}
-          >
-            All ({publications.length})
-          </button>
-          {decades.map((d) => {
-            const count = publications.filter(
-              (p) => p.year && Math.floor(p.year / 10) * 10 === d
-            ).length;
-            return (
-              <button
-                key={d}
-                style={styles.filterBtn(activeFilter === d)}
-                onClick={() => setActiveFilter(d)}
-              >
-                {d}s ({count})
-              </button>
-            );
-          })}
-          {hasInPress && (
-            <button
-              style={styles.filterBtn(activeFilter === "inpress")}
-              onClick={() => setActiveFilter("inpress")}
-            >
-              In Press ({publications.filter((p) => p.inPress).length})
-            </button>
-          )}
-        </div>
-      )} */}
-
-      {/* Timeline */}
-      {totalVisible === 0 ? (
-        <div style={styles.emptyState}>No publications match this filter.</div>
-      ) : (
-        <div style={styles.timeline}>
-          <div style={styles.timelineRule} />
-          {grouped.map((group) => (
-            <div key={group.label} style={styles.yearGroup}>
-              {/* Year header */}
-              <div style={styles.yearLabel}>
-                <div style={styles.yearDot}>
-                  <div style={styles.yearDotInner} />
-                </div>
-                <span style={styles.yearText}>
-                  {group.label}
-                </span>
-                <span style={styles.yearBadge}>{group.pubs.length}</span>
+      <div style={styles.timeline}>
+        <div style={styles.timelineRule} />
+        {grouped.map((group) => (
+          <div key={group.label} style={styles.yearGroup}>
+            <div style={styles.yearLabel}>
+              <div style={styles.yearDot}>
+                <div style={styles.yearDotInner} />
               </div>
-
-              {/* Publication cards */}
-              {group.pubs.map((pub) => (
-                <PublicationCard key={pub.id} pub={pub} />
-              ))}
+              <span style={styles.yearText}>{group.label}</span>
             </div>
-          ))}
-        </div>
-      )}
+            {group.pubs.map((pub) => (
+              <PublicationCard key={pub.title} pub={pub} />
+            ))}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
