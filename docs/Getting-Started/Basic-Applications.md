@@ -52,4 +52,4 @@ profiler(nnp)
 emgRecordRaw(nnp)
 ```
 
-*For more apps and full descriptions, refer to the [**MATLAB Apps**](/Software/NNP-Apps) page*
+*For more apps and full descriptions, refer to the [**MATLAB Apps**](/Software/MATLAB-Interface/NNP-Apps) page*
