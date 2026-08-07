@@ -11,7 +11,7 @@ const config = {
   favicon: 'img/Cosmiic_favicon-150x150.png',
 
   // Set the production url of your site here
-  url: 'https://cosmiic-community.github.io',
+  url: 'https://docs.cosmiic.org',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -19,8 +19,8 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'COSMIIC-Community', // Usually your GitHub org/user name.
-  projectName: 'COSMIIC-Community.github.io', // Usually your repo name.
-  deploymentBranch: 'main', //  deployment branch on COSMIIC-Community.github.io repo
+  projectName: 'COSMIIC-Documentation', // Usually your repo name.
+  deploymentBranch: 'gh-pages', //  GitHub Pages deployment branch on COSMIIC-Documentation repo
 
   // Handling bad links and images
   onBrokenLinks: 'warn',
