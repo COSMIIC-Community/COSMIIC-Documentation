@@ -12,11 +12,6 @@ Adjust the stimulation amplitude to a lower range by replacing a resistor on the
 
 The Translational Neuro Engineering Lab at Scuola Superiore Sant'Anna is studying several neuromodulation techniques in animal models. Because these applications interface directly with the peripheral nervous system, they require lower stimulation levels and finer resolution than the original COSMIIC system design for muscular activation.
 
-### Contributors
-
-- Scuola Superiore Sant'Anna Lab: Filippo Castellani, Alice Gianotti, Francesco Iberite, Silvestro Micera
-- COSMIIC team: Jerry Ukwela, Chris Rexroth
-
 ---
 
 ## Modifications
@@ -70,3 +65,7 @@ Further experiments are needed to fully characterize the performance of the modi
 ## Attributions
 
 Supported by the NIH SPARC HORNET program, the Case Western Reserve University team is funded by main award U41NS129436-03 and is interacting with the Scuola Superiore Sant'Anna as an early adopter.
+
+### Contributors
+
+- Scuola Superiore Sant'Anna Lab: Filippo Castellani, Alice Gianotti, Francesco Iberite, Silvestro Micera

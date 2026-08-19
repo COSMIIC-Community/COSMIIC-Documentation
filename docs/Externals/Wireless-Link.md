@@ -14,7 +14,7 @@ Wireless control of the COSMIIC System
 ---
 
 ## Technical Overview
-The code can be built with or without charger functionality. The Wireless Link is based on the nRF4340+nRF7002 companion module (Fanstel WT40 BLE+WiFi module) and the CC1101 (Anaren A1101 433MHz module). The Nordic nRF5340 is a capable microcontroller with many peripherals
+The code can be built with or without charger functionality. The Wireless Link is based on the nRF5340+nRF7002 companion module (Fanstel WT40 BLE+WiFi module) and the CC1101 (Anaren A1101 433MHz module). The Nordic nRF5340 is a capable microcontroller with many peripherals.
 
 This code is based on:
 * BLE Peripheral with Nordic UART Serivce and USB ASM CDC: peripheral_uart sample (nrf/samples/bluetooth)

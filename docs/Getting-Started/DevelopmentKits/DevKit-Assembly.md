@@ -204,3 +204,9 @@ Individual Notes on Assembly:
 ![Figure 4: Populated Board with BOM number references for components](./img/PG_fig4.png)
 
 Figure 4: Populated Board with BOM number references for components.
+
+---
+
+### Contributors
+
+- Reilly Burhana, Amith Chitneni

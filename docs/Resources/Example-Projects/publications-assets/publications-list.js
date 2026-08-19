@@ -1,4 +1,3 @@
-// src/data/publications.js
 // Add new publications here — they will automatically appear in chronological order on the timeline.
 // Set year: null and month: null for "In Press" entries.
 
