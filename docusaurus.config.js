@@ -105,18 +105,18 @@ const config = {
         items: 
         [
           {
+            href: 'https://cosmiic.org',
+            label: 'Homepage',
+            position: 'right',
+          },
+          {
+            href: 'https://community.cosmiic.org',
+            label: 'Forum',
+            position: 'right',
+          },
+          {
             href: 'https://github.com/COSMIIC-Community',
             label: 'GitHub',
-            position: 'right',
-          },
-          {
-            href: 'https://cosmiic.org',
-            label: 'Main Site',
-            position: 'right',
-          },
-          {
-            href: 'https://cosmiic.atlassian.net/servicedesk/customer/portal/1/group/1/create/19',
-            label: 'Contact',
             position: 'right',
           },
         ],
