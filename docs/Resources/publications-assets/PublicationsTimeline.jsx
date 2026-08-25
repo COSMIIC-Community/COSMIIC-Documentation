@@ -6,8 +6,8 @@ import React, { useState, useMemo } from "react";
 
 // ─── Inline styles (avoids Docusaurus CSS module conflicts) ──────────────────
 
-const TEAL = "var(--ifm-color-primary, #0ea5a0)";
-const TEAL_BG = "var(--ifm-color-primary-lightest, #e6f8f8)";
+const PURPLE = "#602052";
+const PURPLE_BG = "#f3e8f1";
 const BORDER = "var(--ifm-color-emphasis-200, #e5e7eb)";
 const TEXT_MUTED = "var(--ifm-color-emphasis-600, #6b7280)";
 const TEXT_HEADING = "var(--ifm-heading-color, #111827)";
@@ -30,7 +30,7 @@ const styles = {
     top: 0,
     bottom: 0,
     width: 2,
-    background: `linear-gradient(to bottom, ${TEAL}, ${BORDER})`,
+    background: `linear-gradient(to bottom, ${PURPLE}, ${BORDER})`,
     borderRadius: 2,
     zIndex: 0,
   },
@@ -48,13 +48,13 @@ const styles = {
     width: 28,
     height: 28,
     borderRadius: "50%",
-    background: TEAL,
+    background: PURPLE,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     flexShrink: 0,
     zIndex: 1,
-    boxShadow: `0 0 0 4px ${TEAL_BG}`,
+    boxShadow: `0 0 0 4px ${PURPLE_BG}`,
   },
   yearDotInner: {
     width: 10,
@@ -72,7 +72,7 @@ const styles = {
   card: {
     background: CARD_BG,
     border: `1px solid ${BORDER}`,
-    borderLeft: `4px solid ${TEAL}`,
+    borderLeft: `4px solid ${PURPLE}`,
     borderRadius: 10,
     padding: "1rem 1.25rem",
     marginBottom: "0.75rem",
@@ -119,10 +119,10 @@ const styles = {
   doiLink: {
     fontSize: "0.75rem",
     fontWeight: 600,
-    color: TEAL,
+    color: PURPLE,
     textDecoration: "none",
     padding: "0.2rem 0.6rem",
-    border: `1px solid ${TEAL}`,
+    border: `1px solid ${PURPLE}`,
     borderRadius: 4,
     transition: "background 0.15s ease",
     lineHeight: 1.4,
@@ -163,7 +163,7 @@ function PublicationCard({ pub }) {
       style={{
         ...styles.card,
         boxShadow: hovered
-          ? "0 4px 16px rgba(14,165,160,0.12)"
+          ? "0 4px 16px rgba(96,32,82,0.12)"
           : "0 1px 4px rgba(0,0,0,0.05)",
         transform: hovered ? "translateX(3px)" : "none",
       }}
