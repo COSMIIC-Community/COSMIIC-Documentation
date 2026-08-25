@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # Licensing
@@ -71,7 +71,7 @@ The technology of the COSMIIC System is involved in multiple patents, grants, an
 
 ### Neural Prosthesis  
 
-**Patent #:** :file_folder: [US-9108060-B2](./img/9108060.pdf)  
+**Patent #:** :file_folder: [US-9108060-B2](./licensing-assets/patent9108060.pdf)  
 **Filed:** 2013-08-01   **Issued:** 2015-08-18  
 **Assignee:** Case Western Reserve University  
 
@@ -81,13 +81,13 @@ This patent is the continuation of the following parent patents that were filed 
 
 | Patent # (download link) | Filed | Issued | Assignee |
 |---|---|---|---|
-| :file_folder: [US-7260436-B2](./img/7260436.pdf) | 2002-10-16 | 2007-08-21 | Case Western Reserve University |
-| :file_folder: [US-8532786-B2](./img/8532786.pdf) | 2007-08-21 | 2013-09-10 | Case Western Reserve University |
-| :file_folder: [US-8768482-B2](./img/8768482.pdf) | 2012-06-16 | 2014-06-01 | Case Western Reserve University |
+| :file_folder: [US-7260436-B2](./licensing-assets/patent7260436.pdf) | 2002-10-16 | 2007-08-21 | Case Western Reserve University |
+| :file_folder: [US-8532786-B2](./licensing-assets/patent8532786.pdf) | 2007-08-21 | 2013-09-10 | Case Western Reserve University |
+| :file_folder: [US-8768482-B2](./licensing-assets/patent8768482.pdf) | 2012-06-16 | 2014-06-01 | Case Western Reserve University |
 
 ### Asymmetrical Force Connector System
 
-**Patent #:** :file_folder: [US-10634181-B2](./img/10634181.pdf)  
+**Patent #:** :file_folder: [US-10634181-B2](./licensing-assets/patent10634181.pdf)  
 **Filed:** 2013-03-12   **Issued:** 2020-04-28  
 **Assignee:** Case Western Reserve University  
 

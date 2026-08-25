@@ -104,12 +104,7 @@ const styles = {
   },
   journalChip: {
     fontSize: "0.75rem",
-    fontWeight: 600,
-    color: TEAL,
-    background: TEAL_BG,
-    padding: "0.15rem 0.55rem",
-    borderRadius: 4,
-    flexShrink: 0,
+    color: TEXT_MUTED,
   },
   detailsText: {
     fontSize: "0.75rem",
