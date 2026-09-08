@@ -86,7 +86,7 @@ const config = {
       announcementBar: {
         id: 'support_us',
         content:
-          'Announcement: Follow us on LinkedIn at https://www.linkedin.com/company/cosmiic/ for the latest updates!',
+          'Follow us on LinkedIn at https://www.linkedin.com/company/cosmiic/ for the latest updates!',
         backgroundColor: '#fafbfc',
         textColor: '#091E42',
         isCloseable: true,
