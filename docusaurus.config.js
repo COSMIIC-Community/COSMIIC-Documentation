@@ -110,6 +110,11 @@ const config = {
             label: 'GitHub',
             position: 'right',
           },
+          {
+            href: 'https://www.linkedin.com/company/cosmiic',
+            label: 'LinkedIn',
+            position: 'right',
+          },
         ],
       },
       footer: 
