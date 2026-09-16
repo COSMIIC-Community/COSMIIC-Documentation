@@ -18,6 +18,19 @@ const publications = [
   },
   {
     year: 2026,
+    month: 8, // August
+    title:
+      "A 4-MHz Miniaturized Inductive Receive Chain for Closed-Loop Neuromodulation with Bladder Pressure Feedback",
+    authors: "Yang L, Burhanna R, Ukwela J, Majerus SJA",
+    journal: "IEEE MWSCAS",
+    details: "2026 IEEE 69th Int. Midwest Symp. Circuits Syst., Cincinnati, OH, USA, 2026, pp. 105-109",
+    doi: "10.1109/MWSCAS67364.2026.11680908",
+    pmid: null,
+    pmcid: null,
+    url: "https://doi.org/10.1109/MWSCAS67364.2026.11680908",
+  },
+  {
+    year: 2026,
     month: 1, // January
     title:
       "The Sixth Bioelectronic Medicine Summit: Neurotechnologies for Individuals and Communities",
