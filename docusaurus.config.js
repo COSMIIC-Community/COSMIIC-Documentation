@@ -83,15 +83,6 @@ const config = {
       // Replace with your project's social card
       image: 'img/COSMIIC-square-logo.svg',
 
-      announcementBar: {
-        id: 'support_us',
-        content:
-          'Follow us on LinkedIn at https://www.linkedin.com/company/cosmiic/ for the latest updates!',
-        backgroundColor: '#fafbfc',
-        textColor: '#091E42',
-        isCloseable: true,
-      },
-
       navbar: 
       {
         style: 'primary',
