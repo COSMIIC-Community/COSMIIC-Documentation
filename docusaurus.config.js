@@ -75,8 +75,6 @@ const config = {
     ],
   ],
 
-  themes: ['@docusaurus/theme-mermaid'],
-
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -128,7 +126,7 @@ const config = {
         },
         copyright: `Copyright © ${new Date().getFullYear()} COSMIIC`,
       },
-      themes: ['@docusaurus/theme-mermaid'],
+      themes: [['@docusaurus/theme-mermaid', { options: { securityLevel: 'loose' } }]],
       prism: 
       {
         theme: lightCodeTheme,
