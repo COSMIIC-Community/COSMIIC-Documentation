@@ -20,6 +20,20 @@ const publications = [
     year: 2026,
     month: 8, // August
     title:
+      "Functional electrical stimulation and brain-machine interfaces for simultaneous control of wrist and finger flexion",
+    authors:
+      "Mender MJ, Ward AL, Cubillos LH, Kelberman MM, Costello JT, Temmar H, Wallace DM, Lin ET, Lam JL, Willsey MS, Ganesh Kumar N, Kung TA, Patil PG, Chestek CA",
+    journal: "J Neuroeng Rehabil",
+    details: "2026 Aug 5;23(1)",
+    doi: "10.1186/s12984-026-02091-7",
+    pmid: null,
+    pmcid: null,
+    url: "https://doi.org/10.1186/s12984-026-02091-7",
+  },
+  {
+    year: 2026,
+    month: 8, // August
+    title:
       "A 4-MHz Miniaturized Inductive Receive Chain for Closed-Loop Neuromodulation with Bladder Pressure Feedback",
     authors: "Yang L, Burhanna R, Ukwela J, Majerus SJA",
     journal: "IEEE MWSCAS",
@@ -138,6 +152,20 @@ const publications = [
     pmid: "32232094",
     pmcid: null,
     url: "https://doi.org/10.1186/s42234-019-0019-x",
+  },
+  {
+    year: 2023,
+    month: 5, // May
+    title:
+      "Restoring continuous finger function with temporarily paralyzed nonhuman primates using brain–machine interfaces",
+    authors:
+      "Nason-Tomaszewski SR, Mender MJ, Kennedy E, Lambrecht JM, Kilgore KL, Chiravuri S, Ganesh Kumar N, Kung TA, Willsey MS, Chestek CA, Patil PG",
+    journal: "J Neural Eng",
+    details: "2023 May;20(3):036006",
+    doi: "10.1088/1741-2552/accf36",
+    pmid: "37084719",
+    pmcid: null,
+    url: "https://doi.org/10.1088/1741-2552/accf36",
   },
   {
     year: 2023,
