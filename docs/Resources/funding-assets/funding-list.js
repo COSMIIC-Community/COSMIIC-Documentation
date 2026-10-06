@@ -138,18 +138,6 @@ const funding = [
     amount: "$9.7M total",
     note: "Funded through the NIH Bioengineering “CREATE” mechanism.",
   },
-  {
-    year: 2019,
-    month: 7,
-    endYear: 2023,
-    endMonth: 7,
-    title: "Implanted Blood Pressure Sensor for Autonomic Dysreflexia Monitoring/Alarm",
-    pi: "Kevin L. Kilgore, PhD",
-    agency: "Craig H. Neilsen Foundation",
-    award: "CHNF #598202",
-    amount: "$200K/yr",
-    note: null,
-  },
 
   // ─── 2021-present: COSMIIC / HORNET open-source era ──────────────────────────
   {
