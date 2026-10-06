@@ -166,7 +166,7 @@ function FundingCard({ grant }) {
         {grant.agency && <span style={styles.agencyChip}>{grant.agency}</span>}
         <span style={styles.detailsText}>
           {formatPeriod(grant)}
-          {grant.type ? ` · ${grant.type}` : ""}
+          {grant.award ? ` · ${grant.award}` : ""}
         </span>
         {grant.amount && <span style={styles.amountText}>{grant.amount}</span>}
       </div>
