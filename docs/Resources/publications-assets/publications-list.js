@@ -45,6 +45,20 @@ const publications = [
   },
   {
     year: 2026,
+    month: 9, // September
+    title:
+      "Accelerating the development of bioelectronic medicine: outcomes and innovations from the NIH SPARC initiative",
+    authors:
+      "Patel B, Pikov V, Damaser MS, Boline J, Tappan SJ, Nickerson DP, Ward MP, Gunalan PK, Neufeld E, Ludwig KA, Grethe JS, Wagenaar JB, Martone ME",
+    journal: "Bioelectronic Medicine",
+    details: "2026 Sep;12(1)",
+    doi: "10.1186/s42234-026-00213-z",
+    pmid: "42693487",
+    pmcid: "PMC13543476",
+    url: "https://doi.org/10.1186/s42234-026-00213-z",
+  },
+  {
+    year: 2026,
     month: 1, // January
     title:
       "The Sixth Bioelectronic Medicine Summit: Neurotechnologies for Individuals and Communities",
