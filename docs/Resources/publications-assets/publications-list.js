@@ -59,6 +59,18 @@ const publications = [
   },
   {
     year: 2025,
+    month: 3, // March
+    title: "Recent advances in facilitating the translation of bioelectronic medicine therapies",
+    authors: "Baldwin A, States G, Pikov V, Gunalan P, Elyahoodayan S, Kilgore K, Meng E",
+    journal: "Curr Opin Biomed Eng",
+    details: "2025 Mar;33:100575",
+    doi: "10.1016/j.cobme.2024.100575",
+    pmid: "39896232",
+    pmcid: "PMC11781353",
+    url: "https://doi.org/10.1016/j.cobme.2024.100575",
+  },
+  {
+    year: 2025,
     month: 11, // November
     title: "Building and Sustaining Open-Source Medical Device Projects",
     authors: "Baldwin A, Elyahoodayan S, Gunalan P, Pikov V, Meng E",
